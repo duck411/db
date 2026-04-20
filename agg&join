@@ -1,0 +1,25 @@
+create database company;
+use company;
+
+create table employee(
+emp_id int,
+emp_name varchar(50),
+emp_sal int);
+
+insert into employee values(1,"Anurag",20000),(2,"Ram",30000);
+
+select count(*) from employee;
+select avg(emp_sal) from employee;
+select min(emp_sal) from employee;
+select max(emp_sal) from employee;
+select sum(emp_sal) from employee;
+
+
+create table department(
+emp_id int,
+emp_dept int
+);
+
+insert into department values(1,20),(2,30);
+
+select employee.emp_name,department.emp_dept from employee left outer join department on employee.emp_id=department.emp_id;
